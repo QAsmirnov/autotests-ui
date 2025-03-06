@@ -21,4 +21,3 @@ with sync_playwright() as playwright:
 
     # check button is active
     expect(register_button).to_be_enabled()
-
