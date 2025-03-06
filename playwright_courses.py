@@ -31,10 +31,16 @@ with sync_playwright() as playwright:
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
 
     # locators
-    text_title = page.get_by_test_id('courses-list-toolbar-title-text')
-    informational_text = page.get_by_test_id('courses-list-empty-view-title-text')
+    toolbar_title_text = page.get_by_test_id('courses-list-toolbar-title-text')
+    folder_icon = page.get_by_test_id('courses-list-empty-view-icon')
+    view_title_text = page.get_by_test_id('courses-list-empty-view-title-text')
+    description_text = page.get_by_test_id('courses-list-empty-view-description-text')
 
-    # check text page
-    expect(text_title).to_have_text("Courses")
-    expect(informational_text).to_have_text("There is no results")
+    # check text
+    expect(toolbar_title_text).to_have_text("Courses")
+    expect(view_title_text).to_have_text("There is no results")
+    expect(description_text).to_have_text("Results from the load test pipeline will be displayed here")
+
+    # check icon
+    expect(folder_icon).to_be_visible()
 
