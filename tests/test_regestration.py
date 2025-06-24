@@ -19,5 +19,5 @@ def test_successful_registration(chromium_page: Page):
     password_input.fill("password")
     register_button.click()
 
-    dashboard_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
+    dashboard_title = chromium_page.get_by_test_id('dashboagird-toolbar-title-text')
     expect(dashboard_title).to_be_visible()
